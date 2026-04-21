@@ -1,0 +1,25 @@
+name: CI-CD Pipeline
+
+on:
+  push:
+    branches: [ "main" ] # 메인 브랜치에 코드가 들어오면 실행
+
+jobs:  build-and-deploy:
+
+    runs-on: ubuntu-latest # GitHub이 제공하는 가상 리눅스 서버에서 실행
+    
+    steps:
+    - name: 1. 코드 가져오기
+      uses: actions/checkout@v3
+
+    - name: 2. Docker Hub 로그인
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }} # GitHub 설정에서 입력할 변수
+        password: ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: 3. 이미지 빌드 및 푸시
+      run: |
+        # 본인의 Docker Hub ID로 바꿔야 합니다!
+        docker build -t dydcjsrjaror/my-nginx:latest .
+        docker push dydcjsrjaror/my-nginx:latest
