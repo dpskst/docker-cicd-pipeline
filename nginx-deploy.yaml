@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment        # 무엇을 할 것인가? (배포 및 관리)
+metadata:
+  name: nginx-deploy    # 이 관리자의 이름
+spec:
+  replicas: 3           # 핵심! 컨테이너(Pod)를 무조건 3개 유지해라
+  selector:
+    matchLabels:
+      app: web
+  template:             # 생성될 Pod들의 정보
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80
