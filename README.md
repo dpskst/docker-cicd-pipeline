@@ -102,7 +102,7 @@ Commit SHA 태그를 사용하여 특정 Commit에서 생성된 Image를 식별�
 
 ### Docker Hub
 
-![Docker Hub Image](docs/screenshots/dockerhub-image.png)
+
 
 > <img width="1839" height="839" alt="image" src="https://github.com/user-attachments/assets/be31e338-70c5-4efb-a657-74a5c76b614b" />
 
