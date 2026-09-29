@@ -159,7 +159,6 @@ Remote Server Deployment
 
 ### Application
 
-![Application](docs/screenshots/application.png)
 
 > <img width="525" height="393" alt="image" src="https://github.com/user-attachments/assets/73a6ddf7-a76d-49db-a386-c4499358ca24" />
 
