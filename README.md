@@ -2,13 +2,13 @@
 
 Docker와 GitHub Actions를 활용하여 애플리케이션의 빌드부터 Docker Hub 이미지 배포, 원격 서버 배포까지 자동화한 CI/CD 프로젝트입니다.
 
-## Project Overview
+## 1. Project Overview
 
 소스 코드 변경 및 Git Push를 시작으로 GitHub Actions에서 Docker 이미지를 자동으로 빌드하고 테스트한 후 Docker Hub에 Push합니다.
 
 이후 원격 서버(`devops-lab`)에 SSH로 접속하여 최신 Docker 이미지를 Pull하고 기존 컨테이너를 재배포합니다.
 
-## Architecture
+## 2. Architecture
 
 ```text
 Developer
@@ -37,7 +37,7 @@ devops-lab
     +-- docker run
 ```
 
-## Environment
+## 3. Environment
 
 | Category        | Technology     |
 | --------------- | -------------- |
@@ -49,7 +49,7 @@ devops-lab
 | Server          | Rocky Linux    |
 | Version Control | Git / GitHub   |
 
-## Project Structure
+## 4. Project Structure
 
 ```text
 my-docker-cicd
@@ -63,9 +63,9 @@ my-docker-cicd
 └── README.md
 ```
 
-## CI/CD Process
+## 5. CI/CD Process
 
-### 1. Source Push
+### 5.1 Source Push
 
 ```bash
 git push origin main
@@ -73,7 +73,7 @@ git push origin main
 
 GitHub의 `main` 브랜치에 코드가 Push되면 GitHub Actions Workflow가 실행됩니다.
 
-### 2. Docker Image Build
+### 5.2 Docker Image Build
 
 GitHub Actions에서 `app/Dockerfile`을 기반으로 Docker 이미지를 생성합니다.
 
@@ -88,13 +88,13 @@ dydcjsrjaror/my-devops-app:<commit SHA>
 dydcjsrjaror/my-devops-app:latest
 ```
 
-### 3. Docker Container Test
+### 5.3 Docker Container Test
 
 빌드된 이미지를 임시 컨테이너로 실행한 후 HTTP 요청을 통해 애플리케이션의 정상 동작 여부를 확인합니다.
 
 테스트가 정상적으로 완료된 경우에만 Docker Hub Push 단계가 실행됩니다.
 
-### 4. Docker Hub Push
+### 5.4 Docker Hub Push
 
 Container Test가 완료되면 Docker Image를 Docker Hub에 Push합니다.
 
@@ -107,7 +107,7 @@ Commit SHA 태그를 사용하여 특정 Commit에서 생성된 Image를 식별�
 > <img width="1839" height="839" alt="image" src="https://github.com/user-attachments/assets/be31e338-70c5-4efb-a657-74a5c76b614b" />
 
 
-### 5. Remote Server Deployment
+### 5.5 Remote Server Deployment
 
 GitHub Actions에서 SSH를 이용하여 `devops-lab` 서버에 접속합니다.
 
@@ -129,7 +129,7 @@ Docker Hub에서 새로운 이미지를 Pull한 후 기존 컨테이너를 종�
 
 
 
-### 6. GitHub Actions 실행 결과
+### 5.6 GitHub Actions 실행 결과
 
 전체 CI/CD Pipeline은 GitHub Actions Workflow를 통해 자동으로 실행됩니다.
 
@@ -153,7 +153,7 @@ Remote Server Deployment
 
 
 
-### 7. Application Deployment Result
+### 5.7 Application Deployment Result
 
 배포가 완료된 후 원격 서버의 Nginx 애플리케이션에 HTTP 요청하여 정상적으로 서비스되는 것을 확인했습니다.
 
@@ -163,7 +163,7 @@ Remote Server Deployment
 > <img width="525" height="393" alt="image" src="https://github.com/user-attachments/assets/73a6ddf7-a76d-49db-a386-c4499358ca24" />
 
 
-## GitHub Secrets
+## 6. GitHub Secrets
 
 서버 및 Docker Hub 인증 정보는 GitHub Actions Secrets를 사용하여 관리합니다.
 
@@ -177,7 +177,7 @@ SERVER_SSH_KEY
 
 민감한 인증정보를 Workflow 파일에 직접 작성하지 않고 GitHub Secrets를 통해 전달하도록 구성했습니다.
 
-## Project Goals
+## 7. Project Goals
 
 * Docker 컨테이너 기반 애플리케이션 배포
 * GitHub Actions를 활용한 CI/CD 자동화
@@ -186,7 +186,7 @@ SERVER_SSH_KEY
 * SSH 기반 원격 서버 배포 자동화
 * Commit SHA 기반 이미지 버전 관리
 
-## What I Learned
+## 8. What I Learned
 
 * Dockerfile 작성 및 Docker Image Build
 * Docker Container 실행 및 HTTP 기반 테스트
