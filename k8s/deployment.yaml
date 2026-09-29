@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
         - name: my-devops-app
-          image: dydcjsrjaror/my-devops-app:latest
+          image: dydcjsrjaror/my-devops-app:ddcdda58af29fc7a432f5dc4ce0b5243ebc461d5
           ports:
             - containerPort: 80
