@@ -148,7 +148,8 @@ Remote Server Deployment
 ### GitHub Actions
 
 
-> <img width="794" height="833" alt="image" src="https://github.com/user-attachments/assets/ed855f6b-7a6e-48c5-b80f-02b25bfc431b" />
+> <img width="809" height="709" alt="image" src="https://github.com/user-attachments/assets/4ae9187f-03f0-46f7-90cd-a8356be8ee30" />
+
 
 
 
