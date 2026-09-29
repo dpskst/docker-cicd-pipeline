@@ -198,12 +198,3 @@ SERVER_SSH_KEY
 * SSH 기반 원격 서버 배포
 * Commit SHA 기반 Docker Image Version 관리
 * CI/CD Pipeline 구성 및 장애 대응
-
-## Project Screenshots
-
-주요 구현 결과를 다음 화면을 통해 확인할 수 있습니다.
-
-* GitHub Actions Workflow 실행 결과
-* Docker Hub Image 및 Tag
-* 원격 서버 Docker Container
-* 배포된 Nginx Application
