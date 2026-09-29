@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-devops-app
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: my-devops-app
+  template:
+    metadata:
+      labels:
+        app: my-devops-app
+    spec:
+      containers:
+        - name: my-devops-app
+          image: dydcjsrjaror/my-devops-app:latest
+          ports:
+            - containerPort: 80
