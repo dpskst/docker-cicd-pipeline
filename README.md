@@ -45,8 +45,8 @@ Docker Hub Push, 원격 Linux 서버 자동 배포까지
                            │
                            ▼
                  ┌───────────────────┐
-                 │      TEST69       │
-                 │   Rocky Linux     │
+                 │    devops-lab     │
+                 │   Rocky Linux 8.9 │
                  │                   │
                  │  Docker Pull      │
                  │  Container Run    │
