@@ -29,7 +29,7 @@ Docker Hub Push, 원격 Linux 서버 자동 배포까지
                            │
                            ▼
                  ┌───────────────────┐
-                 │  GitHub Actions    │
+                 │  GitHub Actions   │
                  │                   │
                  │  Docker Build     │
                  │  Container Test   │
