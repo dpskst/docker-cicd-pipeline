@@ -14,3 +14,25 @@ Docker Hub Push, 원격 Linux 서버 자동 배포까지
 - Docker 이미지 자동 빌드 및 테스트
 - Docker Hub 이미지 저장 및 관리
 - SSH를 통한 원격 서버 자동 배포
+
+## 2. 아키텍처
+
+Git Push
+   ↓
+GitHub
+   ↓
+GitHub Actions
+   ↓
+Docker Build
+   ↓
+Container Test
+   ↓
+Docker Hub Push
+   ↓
+SSH
+   ↓
+TEST69 Linux Server
+   ↓
+Docker Pull
+   ↓
+Container 재배포
