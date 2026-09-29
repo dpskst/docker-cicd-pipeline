@@ -248,6 +248,3 @@ Prometheus + Grafana Monitoring
 * Monitoring
 
 ```
-
-이 버전이면 **Project 3 README와 문체/구성이 통일되고**, 스크린샷도 설명 바로 아래에 들어가서 훨씬 깔끔해.
-```
