@@ -1,0 +1,24 @@
+name: CI-CD Pipeline
+
+on:
+  push:
+    branches: [ "main" ] # 7번 줄: 메인 브랜치에 푸시될 때 실행
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 1. 코드 가져오기
+      uses: actions/checkout@v3
+
+    - name: 2. Docker Hub 로그인
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: 3. 이미지 빌드 및 푸시
+      run: |
+        docker build -t ${{ secrets.DOCKER_USERNAME }}/my-nginx:latest .
+        docker push ${{ secrets.DOCKER_USERNAME }}/my-nginx:latest
