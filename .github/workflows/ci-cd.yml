@@ -6,21 +6,41 @@ on:
       - main
 
 jobs:
-  docker-build:
+  docker-build-push:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout source code
         uses: actions/checkout@v4
 
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
       - name: Build Docker image
         run: |
-          docker build -t my-devops-app:${{ github.sha }} ./app
+          docker build \
+            -t dydcjsrjaror/my-devops-app:${{ github.sha }} \
+            -t dydcjsrjaror/my-devops-app:latest \
+            ./app
 
       - name: Test Docker image
         run: |
-          docker run -d --name test-container -p 8080:80 my-devops-app:${{ github.sha }}
+          docker run -d \
+            --name test-container \
+            -p 8080:80 \
+            dydcjsrjaror/my-devops-app:${{ github.sha }}
+
           sleep 5
+
           curl http://localhost:8080
+
           docker stop test-container
           docker rm test-container
+
+      - name: Push Docker image
+        run: |
+          docker push dydcjsrjaror/my-devops-app:${{ github.sha }}
+          docker push dydcjsrjaror/my-devops-app:latest
