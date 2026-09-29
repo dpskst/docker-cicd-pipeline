@@ -44,3 +44,22 @@ jobs:
         run: |
           docker push dydcjsrjaror/my-devops-app:${{ github.sha }}
           docker push dydcjsrjaror/my-devops-app:latest
+
+      - name: Deploy to TEST69
+        uses: appleboy/ssh-action@v1.2.2
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          script: |
+            docker pull dydcjsrjaror/my-devops-app:${{ github.sha }}
+
+            docker stop my-devops-app || true
+            docker rm my-devops-app || true
+
+            docker run -d \
+              --name my-devops-app \
+              -p 8080:80 \
+              dydcjsrjaror/my-devops-app:${{ github.sha }}
+
+            docker ps
