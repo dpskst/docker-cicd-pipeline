@@ -126,7 +126,8 @@ Docker Hub에서 새로운 이미지를 Pull한 후 기존 컨테이너를 종�
 
 ![Docker Container](docs/screenshots/server-container.png)
 
-> <img width="1340" height="437" alt="image" src="https://github.com/user-attachments/assets/818e94a9-1d27-4fea-8e81-6c2187b6a142" />
+> ![Uploading image.png…]()
+
 
 
 ### 6. GitHub Actions 실행 결과
@@ -149,7 +150,8 @@ Remote Server Deployment
 
 ![GitHub Actions](docs/screenshots/github-actions-success.png)
 
-> GitHub Actions에서 Docker Image Build, Container Test, Docker Hub Push 및 원격 서버 배포가 완료된 화면
+> <img width="790" height="788" alt="image" src="https://github.com/user-attachments/assets/8c0d68e1-8962-4195-9902-808f5f09b94f" />
+
 
 ### 7. Application Deployment Result
 
@@ -159,7 +161,8 @@ Remote Server Deployment
 
 ![Application](docs/screenshots/application.png)
 
-> CI/CD Pipeline을 통해 원격 서버에 배포된 Nginx 애플리케이션 화면
+> <img width="525" height="393" alt="image" src="https://github.com/user-attachments/assets/73a6ddf7-a76d-49db-a386-c4499358ca24" />
+
 
 ## GitHub Secrets
 
