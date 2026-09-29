@@ -8,6 +8,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: ci-cd-main
+  cancel-in-progress: true
+
 jobs:
   docker-build-push:
     runs-on: ubuntu-latest
@@ -68,8 +72,7 @@ jobs:
 
           git commit -m "Update image to ${{ github.sha }} [skip ci]"
 
-          git fetch origin main
-          git rebase origin/main
+          git pull --rebase origin main
 
           git push origin HEAD:main
 
