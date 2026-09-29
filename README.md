@@ -16,23 +16,38 @@ Docker Hub Push, 원격 Linux 서버 자동 배포까지
 - SSH를 통한 원격 서버 자동 배포
 
 ## 2. 아키텍처
-
-Git Push
-   ↓
-GitHub
-   ↓
-GitHub Actions
-   ↓
-Docker Build
-   ↓
-Container Test
-   ↓
-Docker Hub Push
-   ↓
-SSH
-   ↓
-TEST69 Linux Server
-   ↓
-Docker Pull
-   ↓
-Container 재배포
+                    ┌─────────────┐
+                    │  Developer  │
+                    └──────┬──────┘
+                           │
+                       git push
+                           │
+                           ▼
+                    ┌─────────────┐
+                    │   GitHub    │
+                    └──────┬──────┘
+                           │
+                           ▼
+                 ┌───────────────────┐
+                 │  GitHub Actions    │
+                 │                   │
+                 │  Docker Build     │
+                 │  Container Test   │
+                 │  Docker Push      │
+                 └─────────┬─────────┘
+                           │
+                           ▼
+                    ┌─────────────┐
+                    │ Docker Hub  │
+                    └──────┬──────┘
+                           │
+                       SSH Deploy
+                           │
+                           ▼
+                 ┌───────────────────┐
+                 │      TEST69       │
+                 │   Rocky Linux     │
+                 │                   │
+                 │  Docker Pull      │
+                 │  Container Run    │
+                 └───────────────────┘
