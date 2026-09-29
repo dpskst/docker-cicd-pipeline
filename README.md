@@ -6,7 +6,7 @@ Docker와 GitHub Actions를 활용하여 애플리케이션의 빌드부터 Dock
 
 소스 코드 변경 및 Git Push를 시작으로 GitHub Actions에서 Docker 이미지를 자동으로 빌드하고 테스트한 후 Docker Hub에 Push합니다.
 
-이후 원격 서버(TEST69)에 SSH로 접속하여 최신 Docker 이미지를 Pull하고 컨테이너를 재배포합니다.
+이후 원격 서버(devops-lab)에 SSH로 접속하여 최신 Docker 이미지를 Pull하고 컨테이너를 재배포합니다.
 
 ## 🏗️ Architecture
 
@@ -29,7 +29,7 @@ GitHub Actions
     ├── Docker Hub Push
     │
     ▼
-TEST69
+devops-lab
     │
     ├── docker pull
     ├── docker stop
@@ -97,9 +97,9 @@ dydcjsrjaror/my-devops-app:latest
 
 Commit SHA 태그를 사용하여 특정 버전의 이미지를 식별할 수 있도록 구성했습니다.
 
-### 5. TEST69 Deployment
+### 5. devops-lab Deployment
 
-GitHub Actions에서 SSH를 이용해 TEST69 서버에 접속합니다.
+GitHub Actions에서 SSH를 이용해 devops-lab 서버에 접속합니다.
 
 ```bash
 docker pull
