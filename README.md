@@ -126,7 +126,7 @@ Docker Hub에서 새로운 이미지를 Pull한 후 기존 컨테이너를 종�
 
 ![Docker Container](docs/screenshots/server-container.png)
 
-> ![Uploading image.png…]()
+> <img width="1336" height="48" alt="image" src="https://github.com/user-attachments/assets/677d5f0a-9513-4f56-8548-5cc2f1d76005" />
 
 
 
@@ -148,9 +148,10 @@ Remote Server Deployment
 
 ### GitHub Actions
 
-![GitHub Actions](docs/screenshots/github-actions-success.png)
 
-> <img width="790" height="788" alt="image" src="https://github.com/user-attachments/assets/8c0d68e1-8962-4195-9902-808f5f09b94f" />
+> <img width="1336" height="48" alt="image" src="https://github.com/user-attachments/assets/7d7c67b8-c547-40ec-a26b-ef49a64fb3b2" />
+
+
 
 
 ### 7. Application Deployment Result
